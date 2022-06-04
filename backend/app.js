@@ -3,6 +3,7 @@ import bodyParser from 'koa-bodyparser';
 import postRouter from './router/router.js';
 import storeRouter from './router/storeRouter.js';
 import traderRouter from './router/traderRouter.js';
+import 'dotenv/config';
 
 import cors from 'koajs-cors';
 
@@ -26,6 +27,6 @@ app.use(ctx => {
     ctx.body = "<h1>Hellow World</h1>";
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("App running on port 3000");
 });
